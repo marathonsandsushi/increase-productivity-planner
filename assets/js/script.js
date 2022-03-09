@@ -6,7 +6,7 @@ $("#currentDay").append(today);
 console.log(today.format);
 console.log("hello world");
 
-
+const 
 
 
 
