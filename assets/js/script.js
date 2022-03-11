@@ -39,13 +39,27 @@ loadPage = function() {
       
       
       let input = $("<input>").attr("placeholder", "Enter note here").addClass("col-lg time-block description");
-      saveBtn = $("<button>").addClass("fas fa-save saveBtn")
+      const btnId = "btn-" + i;
+      saveBtn = $("<button>").addClass("fas fa-save saveBtn").attr('id', btnId).click(
+        function() {
+          handleButtonClick(i);
+        }
+      );
+
+      // saveBtn.setAttribute("onclick", "handleButtonClick("+i+")");
+      // $("button").click(function(){
+      //   $("img").attr("width",function(n, v){
+      //     return v - 50;
+      //   });
+      // });
       $(hourDiv).append(hourDisplay).append(input).append(saveBtn);
       $(".planner").append(hourDiv);
     }
   };
 
-
+ handleButtonClick = function (arrayIndex) {
+console.log(arrayIndex);
+ }
 
 
 loadPage();
