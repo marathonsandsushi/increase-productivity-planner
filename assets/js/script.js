@@ -13,6 +13,8 @@ loadPage = function() {
     for(let i=0; i < schedule.length; i++) {
       console.log(schedule[i]);
 
+      // <!-- Time: 3 PM -->
+      // <div id="hour15" class="row time-block">
       let hourDiv = $("<div>").addClass("row time-block");
       const timeVal = schedule[i].hour;
       let timeString = "";
@@ -24,11 +26,21 @@ loadPage = function() {
       } else {
         timeString = "12 PM";
       }
+      
+      //   <div class="col-md-1 hour">3 PM</div>
+      let hourDisplay = $("<div>").text(timeString).addClass("col-md-1 hour")
+      //   <textarea class="col-md-10 description"></textarea>
+      let time = $("<textarea>").addClass("description");
 
-      let time = $("<textarea>").text(timeString).addClass("description");
-      let input = $("<input>").attr("placeholder", "Enter note here").addClass("toDo-input time-block");
+
+      //   <button class="btn saveBtn cold-md-1"><i class="fas fa-save"></i></button>
+      // </div>
+      
+      
+      
+      let input = $("<input>").attr("placeholder", "Enter note here").addClass("time-block");
       saveBtn = $("<button>").addClass("fas fa-save saveBtn")
-      $(hourDiv).append(time).append(input).append(saveBtn);
+      $(hourDiv).append(hourDisplay).append(time).append(input).append(saveBtn);
       $(".planner").append(hourDiv);
     }
   };
