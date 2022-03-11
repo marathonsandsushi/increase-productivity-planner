@@ -30,7 +30,7 @@ loadPage = function() {
       //   <div class="col-md-1 hour">3 PM</div>
       let hourDisplay = $("<div>").text(timeString).addClass("col-md-1 hour")
       //   <textarea class="col-md-10 description"></textarea>
-      let time = $("<textarea>").addClass("description");
+     // let time = $("<textarea>").addClass("description");
 
 
       //   <button class="btn saveBtn cold-md-1"><i class="fas fa-save"></i></button>
@@ -38,9 +38,9 @@ loadPage = function() {
       
       
       
-      let input = $("<input>").attr("placeholder", "Enter note here").addClass("time-block");
+      let input = $("<input>").attr("placeholder", "Enter note here").addClass("col-lg time-block description");
       saveBtn = $("<button>").addClass("fas fa-save saveBtn")
-      $(hourDiv).append(hourDisplay).append(time).append(input).append(saveBtn);
+      $(hourDiv).append(hourDisplay).append(input).append(saveBtn);
       $(".planner").append(hourDiv);
     }
   };
