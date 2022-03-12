@@ -70,6 +70,15 @@ body {
     transition: all .3s ease-in-out;
   }
   
+.pastHourColor {
+  background-color: grey;
+}
 
+.currentHourColor {
+  background-color: red;
+}
 
+.futureHourColor {
+  background-color: rgb(119, 206, 119);
+}
   /* Madison Kendall increase-productivity-planner code */

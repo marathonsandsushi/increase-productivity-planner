@@ -73,6 +73,28 @@ createTimeString = function (i) {
   return timeString;
 };
 
+changeInputColor = function () {
+  for (let i = 0; i < schedule.length; i++) {
+    const inputId = "input-" + i;
+    const eventInput = document.getElementById(inputId);
+    $(eventInput).removeClass(".pastHourColor .currentHourColor .futureHourColor");
+    const style = getStyleForHour(schedule[i].hour);
+    $(eventInput).addClass(style);
+  }
+}
+
+getStyleForHour = function (hour) {
+  let currentHour = 13;
+  if (hour < currentHour) {
+    return "pastHourColor";
+  } else if (hour === currentHour) {
+  return "currentHourColor";
+}
+
+return "futureHourColor";
+}
+
 loadPage();
+changeInputColor();
 
 // Madison Kendall increase-productivity-planner code
