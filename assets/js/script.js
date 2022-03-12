@@ -58,6 +58,7 @@ saveEvent = function (i) {
   console.log(eventInput);
   console.log(eventText);
   schedule[i].event =eventText;
+  localStorage.schedule = JSON.stringify(schedule);
 };
 
 loadPage();
