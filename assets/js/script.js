@@ -84,10 +84,10 @@ changeInputColor = function () {
 }
 
 getStyleForHour = function (hour) {
-  let currentHour = 13;
+  let currentHour = moment().format('H');;
   if (hour < currentHour) {
     return "pastHourColor";
-  } else if (hour === currentHour) {
+  } else if (hour == currentHour) {
   return "currentHourColor";
 }
 

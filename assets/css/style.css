@@ -71,7 +71,7 @@ body {
   }
   
 .pastHourColor {
-  background-color: grey;
+  background-color: rgb(212, 209, 209);
 }
 
 .currentHourColor {
