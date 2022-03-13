@@ -19,4 +19,5 @@ A calendar application that allows users to save events for each hour of work ho
 
 ## Live URL
 
-## Screenshots
+## Screenshot
+![work-day-scheduler-screenshot](https://user-images.githubusercontent.com/98371322/158069162-3d9641a5-1cc7-401f-b49e-4be5270f4fe8.png)
