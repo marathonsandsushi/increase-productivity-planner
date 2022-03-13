@@ -1,7 +1,7 @@
 // Hi! Welcome to my increase-productivity-planner code!
 
 // appends the date today to the webpage
-const today = moment().format("MMMM Do YYYY, h:mm:ss a");
+const today = moment().format("MMMM Do YYYY");
 $("#currentDay").html(today);
 
 let schedule = [];
@@ -25,26 +25,41 @@ loadPage = function () {
     $(hourDiv).append(hourDisplay).append(input).append(saveBtn);
     $(".planner").append(hourDiv);
   }
+
 };
 
 saveEvent = function (i) {
-  console.log(i);
-  const inputId = "input-" + i;
-  const eventInput = document.getElementById(inputId);
-  const eventText = eventInput.value;
-  console.log(eventInput);
-  console.log(eventText);
-  schedule[i].event = eventText;
-  localStorage.schedule = JSON.stringify(schedule);
+    console.log(i);
+    const inputId = "input-" + i;
+    const eventInput = document.getElementById(inputId);
+    const eventText = eventInput.value;
+    console.log(eventInput);
+    console.log(eventText);
+    schedule[i].event = eventText;
+
+    localStorage.setItem(i, eventText);
 };
 
 createInputId = function(i) {
     const inputId = "input-" + i;
-    let input = $("<input>")
-      .attr("placeholder", "Enter note here")
-      .addClass("col-lg time-block description")
-      .attr("id", inputId);
-      return input;
+
+    let scheduledItem = localStorage.getItem(i);
+    if ( scheduledItem ) {
+
+        let input = $("<input>")
+          .attr("value", scheduledItem)
+          .addClass("col-lg time-block description")
+          .attr("id", inputId);
+          return input;
+    }
+    else {
+
+        let input = $("<input>")
+        .attr("placeholder", "Enter note here")
+        .addClass("col-lg time-block description")
+        .attr("id", inputId);
+        return input;
+    }
 };
 
 createBtnId = function(i) {
@@ -70,6 +85,7 @@ createTimeString = function (i) {
   } else {
     timeString = "12 PM";
   }
+
   return timeString;
 };
 
